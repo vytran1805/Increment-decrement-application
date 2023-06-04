@@ -5,23 +5,4 @@
     <title>My first Rust App</title>
     <link data-trunk rel="css" href="style.css" />
   </head>
-  <body>
-    <script>
-      // Define the `run` function to load and run the WASM file
-      async function run() {
-        // Load the WASM module
-        const module = await fetch("path/to/your/wasm/file.wasm");
-        const instance = await WebAssembly.instantiateStreaming(module);
-
-        // Get the main function from the WASM module
-        const main = instance.instance.exports.main;
-
-        // Call the main function
-        main();
-      }
-
-      // Run the `run` function when the page finishes loading
-      window.onload = run;
-    </script>
-  </body>
 </html>

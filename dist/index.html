@@ -1,28 +1,23 @@
-<!DOCTYPE html><html><head>
-    <meta charset="utf-8">
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
     <title>My first Rust App</title>
-    <link rel="stylesheet" href="/style-47d2af72b2c79029.css">
-  
-<link rel="preload" href="/number-increment-fb17335c773a157b_bg.wasm" as="fetch" type="application/wasm" crossorigin="">
-<link rel="modulepreload" href="/number-increment-fb17335c773a157b.js"></head>
+    <link rel="stylesheet" href="/style-47d2af72b2c79029.css" />
+
+    <link
+      rel="preload"
+      href="/number-increment-fb17335c773a157b_bg.wasm"
+      as="fetch"
+      type="application/wasm"
+      crossorigin=""
+    />
+    <link rel="modulepreload" href="/number-increment-fb17335c773a157b.js" />
+  </head>
   <body>
-    <script>
-      // Define the `run` function to load and run the WASM file
-      async function run() {
-        // Load the WASM module
-        const module = await fetch("path/to/your/wasm/file.wasm");
-        const instance = await WebAssembly.instantiateStreaming(module);
-
-        // Get the main function from the WASM module
-        const main = instance.instance.exports.main;
-
-        // Call the main function
-        main();
-      }
-
-      // Run the `run` function when the page finishes loading
-      window.onload = run;
+    <script type="module">
+      import init from "./number-increment-fb17335c773a157b.js";
+      init("./number-increment-fb17335c773a157b_bg.wasm");
     </script>
-  
-
-<script type="module">import init from '/number-increment-fb17335c773a157b.js';init('/number-increment-fb17335c773a157b_bg.wasm');</script></body></html>
+  </body>
+</html>
